@@ -12,7 +12,7 @@ sed 's/\([0-9]\)\/\([0-9]\)\/\([0-9][0-9][0-9][0-9]\)/\3-0\2-0\1/' out.4 > out.5
 
 sed 's/;;/;\\N;/' out.5 > out.6
 
-sed 's/;\r/;\\N\r/' out.6 > out.7
+sed 's/;\r/;\\N/' out.6 > out.7
 
 sed 's/;N/;\\N/' out.7 > out.8
 
@@ -20,10 +20,10 @@ sed 's/,/./g' out.8 > out.9
 
 sed 's/;/,/g' out.9 > out.10
 
-cp out.10 Resultado
+sed 's/.4/.4\n/' out.10 > out.11
+
+sed 's/xyz//' out.11 > out.1cp out.12 Resultado
 
 rm out*
-
-cat Resultado
 
 exit
